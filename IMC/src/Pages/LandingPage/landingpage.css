@@ -1,0 +1,26 @@
+#contact{
+  background-color: #ef5615;
+  color:white;
+}
+#contact a{
+  color: white;
+}
+#intro{
+  background-color: #ef5615;
+}
+button{
+  width: 30%;
+}
+#register{
+  background-color: #fffcfc;
+}
+
+.footer {
+  position: relative;
+  text-align: center;
+  bottom: 0px;
+  top: 0px;
+  background-color: #ef5615;
+  border-style: solid;
+  border-color: #ef5615;
+}
