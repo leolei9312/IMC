@@ -5,5 +5,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  isLogin : boolean = false;
+  marlogin : string = "Marketer Login";
+  venlogin : string = "Vendor Login";
+  profile : string = "Profile";
+  constructor(){
+    console.log(this.isLogin);
+  }
 }

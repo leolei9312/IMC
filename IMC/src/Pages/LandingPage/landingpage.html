@@ -39,50 +39,50 @@
         <div class="row">
             <!-- marketers register -->
             <div class="col-lg-6 text-center">
-              <form>
+              <form #Marform="ngForm" (ngSubmit)="onFormSubmit(Marform)">
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Name</p>
                   <div class="col-sm-8">
-                    <input type="text" required class="form-control" placeholder="John Doe">
+                    <input type="text" name="name" required class="form-control" ngModel placeholder="John Doe">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Password</p>
                   <div class="col-sm-8">
-                    <input type="password" required class="form-control">
+                    <input type="password" name="psw" required ngModel class="form-control">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Email</p>
                   <div class="col-sm-8">
-                    <input type="email" required class="form-control" placeholder="name@example.com">
+                    <input type="email" name="email" required class="form-control" ngModel placeholder="name@example.com">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Company</p>
                   <div class="col-sm-8">
-                    <input type="text" required class="form-control" placeholder="@Salesforce">
+                    <input type="text" name="company" required class="form-control" ngModel placeholder="@Salesforce">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Team Size</p>
                   <div class="col-sm-8">
-                    <input type="number" required class="form-control" placeholder="@5">
+                    <input type="number" name="teamsize" required class="form-control" ngModel placeholder="@5">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Industry</p>
                   <div class="col-sm-8">
-                    <input type="text" required class="form-control" placeholder="@Software">
+                    <input type="text" name="industry" required class="form-control" ngModel placeholder="@Software">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Type</p>
                   <div class="col-sm-8">
-                    <select class="col-sm-8 form-control form-control-sm">
-                      <option>Select B2B or B2C</option>
-                      <option>B2B</option>
-                      <option>B2C</option>
+                    <select ngModel name="type" class="col-sm-8 form-control form-control-sm">
+                      <option value="">Select B2B or B2C</option>
+                      <option value="B2B">B2B</option>
+                      <option value="B2C">B2C</option>
                     </select>
                   </div>
                 </div>
@@ -92,35 +92,35 @@
             </div>
             <!-- vendors register -->
             <div class="col-lg-6 text-center">
-              <form>
+              <form #Venform="ngForm" (ngSubmit)="onFormSubmit(Venform)">
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Name</p>
                   <div class="col-sm-8">
-                    <input type="text" required class="form-control" placeholder="John Doe">
+                    <input type="text" name="name" required class="form-control" ngModel placeholder="John Doe">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Password</p>
                   <div class="col-sm-8">
-                    <input type="password" required class="form-control">
+                    <input type="password" name="psw" required ngModel class="form-control">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Email</p>
                   <div class="col-sm-8">
-                    <input type="email" required class="form-control" placeholder="name@example.com">
+                    <input type="email" name="email" required class="form-control" ngModel placeholder="name@example.com">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Company</p>
                   <div class="col-sm-8">
-                    <input type="text" required class="form-control" placeholder="@Salesforce">
+                    <input type="text" name="company" required class="form-control" ngModel placeholder="@Salesforce">
                   </div>
                 </div>
                 <div class="form-group row">
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Team Size</p>
                   <div class="col-sm-8">
-                    <input type="number" required class="form-control" placeholder="@5">
+                    <input type="number" name="teamsize" required class="form-control" ngModel placeholder="@5">
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">GO</button>
@@ -130,26 +130,3 @@
         </div>
     </div>
 </section>
-
-<section id="contact">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 text-center">
-              <h2 class="section-heading">Let's Get In Touch!</h2>
-              <hr class="light">
-              <p>Contact us for more information!</p>
-          </div>
-          <div class="col-lg-4 col-lg-offset-2 text-center">
-              <i class="fa fa-phone fa-3x sr-contact"></i>
-              <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 text-center">
-              <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-              <p ><a href="mailto:mengleilei2018@u.northwestern.edu">Give Us Feedback</a></p>
-          </div>
-      </div>
-  </div>
-</section>
-<div class="footer">
-  <p>Copyright &copy; 2017 MarTech Northwestern University </p>
-</div>
