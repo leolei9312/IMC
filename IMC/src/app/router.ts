@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MarProfile } from '../Pages/MarProfile/marprofile';
-import { LandingPage } from '../Pages/LandingPage/landingpage';
+import { Home } from '../Pages/Home/home';
 
 const routes: Routes = [
-  {path: 'landingpage',component: LandingPage},
+  {path: 'home',component: Home},
   {path: 'marprofile', component: MarProfile},
   {
     path: '',
-    redirectTo: 'landingpage',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 ]
