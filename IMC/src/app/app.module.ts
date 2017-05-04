@@ -7,7 +7,7 @@ import { Home } from '../Pages/Home/home';
 import { MarProfile } from '../Pages/MarProfile/marprofile';
 import { AppRoutingModule } from './router';
 import { AF } from '../Pages/Providers/firebase';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 export const firebaseConfig = {
   apiKey: "AIzaSyD1HTPubvjv39Z4QyyvqhyyY-9Jjik5RfA",
   authDomain: "imcmartech.firebaseapp.com",
@@ -16,6 +16,10 @@ export const firebaseConfig = {
   storageBucket: "imcmartech.appspot.com",
   messagingSenderId: "76653086852"
 };
+const myFirebaseAuthConfig = {
+    provider: AuthProviders.Password,
+    method: AuthMethods.Password
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +32,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [
     AF,
