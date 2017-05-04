@@ -62,6 +62,7 @@ export class AF {
   checkMarketer(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
       console.log('success');
+      this.router.navigate(['/marprofile']);
     }, err => {
       alert('Email or Password is incorrect.');
     });
@@ -70,13 +71,16 @@ export class AF {
   checkVendor(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value}).then(success => {
       console.log('success');
+      this.router.navigate(['/marprofile']);
     }, err => {
       alert('Email or Password is incorrect.');
     });
   }
 
   logout(){
-    this.af.auth.logout();
+    this.af.auth.logout().then(success => {
+      this.router.navigate(['/home']);
+    });
   }
 
 

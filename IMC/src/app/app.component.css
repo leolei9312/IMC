@@ -5,6 +5,11 @@
 #contact a{
   color: white;
 }
+#mainNav a {
+  color: #ef5615;
+
+}
+
 .footer {
   position: relative;
   text-align: center;
