@@ -8,6 +8,8 @@ import { AF } from '../Providers/firebase';
 })
 export class MarProfile {
   constructor(public af:AF){
-    //console.log(this.af.marketers);
+    this.af.af.auth.subscribe((data) => {
+      
+    });
   }
 }

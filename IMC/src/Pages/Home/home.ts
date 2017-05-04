@@ -11,10 +11,10 @@ export class Home{
   public form : NgForm;
   public isLogin : boolean;
   constructor(public af : AF){
-  this.af.af.auth.subscribe((data) => {
-    if(data) this.isLogin = true;
-    else this.isLogin = false;
-  });
+    this.af.af.auth.subscribe((data) => {
+      if(data) this.isLogin = true;
+      else this.isLogin = false;
+    });
   }
   onMarketerSubmit(form: NgForm) {
     this.af.AddMarketer(form);

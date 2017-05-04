@@ -36,7 +36,6 @@ export class AF {
   }
   //add new vendors to database
   AddVendor(form:any){
-
     this.af.auth.createUser({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
       this.marketers = this.af.database.object('vendors/' + form.controls['name'].value);
       this.marketers.subscribe((obj) => {
