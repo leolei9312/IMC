@@ -39,52 +39,20 @@
                 </ul>
             </div>
 
-            <form role="form">
+            <form role="form" #marprofile="ngForm" (ngSubmit)="SubmitProfile(marprofile)">
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <h3>Step 1: Campaign Management Stages</h3>
                         <div class="row form-group product-chooser">
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                            <div class="product-chooser-item selected">
-                              <img src="http://renswijnmalen.nl/bootstrap/desktop_mobile.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile and Desktop">
+                          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" *ngFor="let stage of stage1">
+                            <div class="product-chooser-item" (click)="ClickStage1(stage.id)">
+                              <img src="{{stage.img}}" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12">
                               <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <span class="title">Planning</span>
-                                <span class="description">Click here if you are Planning to do marketing work.</span>
-                                <input type="checkbox" name="product" value="mobile_desktop">
-                              </div>
-                              <div class="clear"></div>
-                            </div>
-                          </div>
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                            <div class="product-chooser-item">
-                              <img src="http://renswijnmalen.nl/bootstrap/desktop.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
-                              <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <span class="title">Execution</span>
-                                <span class="description">Click here if you are doing Execution in Campaign Management.</span>
-                                <input type="checkbox" name="product" value="desktop">
-                              </div>
-                              <div class="clear"></div>
-                            </div>
-                          </div>
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                            <div class="product-chooser-item">
-                              <img src="http://renswijnmalen.nl/bootstrap/mobile.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile">
-                              <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <span class="title">Tracking</span>
-                                <span class="description"><Click here if you are doing Tracking in Campaign Management.</span>
-                                <input type="checkbox" name="product" value="mobile">
-                              </div>
-                              <div class="clear"></div>
-                            </div>
-                          </div>
-                          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                            <div class="product-chooser-item">
-                              <img src="http://renswijnmalen.nl/bootstrap/mobile.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile">
-                              <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
-                                <span class="title">Analysis</span>
-                                <span class="description">Click here if you are doing Analysis in Campaign Management.</span>
-                                <input type="checkbox" name="product" value="mobile">
-                              </div>
+                                <span class="title">{{stage.title}}</span>
+                                <span class="description">{{stage.Description}}</span>
+                                <input type="checkbox" name="product" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.value}}">
+																<label for="{{stage.value}}"></label>
+															</div>
                               <div class="clear"></div>
                             </div>
                           </div>
@@ -98,29 +66,9 @@
                         <div id="stage2-parent" class="row form-group product-chooser">
                           <div id="stage2" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                             <div class="funkyradio">
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox1"/>
-                                    <label for="checkbox1">First Option default</label>
-                                </div>
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox2"/>
-                                    <label for="checkbox2">Second Option primary</label>
-                                </div>
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox3"/>
-                                    <label for="checkbox3">Third Option success</label>
-                                </div>
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox4"/>
-                                    <label for="checkbox4">Fourth Option danger</label>
-                                </div>
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox5"/>
-                                    <label for="checkbox5">Fifth Option warning</label>
-                                </div>
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="checkbox" id="checkbox6"/>
-                                    <label for="checkbox6">Sixth Option info</label>
+                                <div class="funkyradio-default" *ngFor="let stage of stage2">
+                                    <input type="checkbox" name="checkbox" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.name}}"/>
+                                    <label for="{{stage.name}}">{{stage.name}}</label>
                                 </div>
                             </div>
                           </div>
@@ -136,13 +84,12 @@
                           <div class="col-lg-6">
                             <div class="input-group">
                               <span class="input-group-addon">$</span>
-                              <input type="text" class="form-control" aria-label="Text input with radio button">
+                              <input type="text" class="form-control" ngModel name="budget" aria-label="Text input with radio button">
                             </div>
                           </div>
                         </div>
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
                             <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
                         </ul>
                     </div>
@@ -150,12 +97,10 @@
                       <h3>Step 4: Say Objective and Requirements</h3>
                       <div class="item-container">
                         <ul class="item-list"></ul>
-                        <textarea id="item-text" rows="10"></textarea>
+                        <textarea id="item-text" ngModel name="requirement" rows="10"></textarea>
                       </div>
                       <ul class="list-inline pull-right">
-                          <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                          <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                          <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                          <li><button type="submit" class="btn btn-primary btn-info-full next-step">Finish</button></li>
                       </ul>
                     </div>
                     <div class="clearfix"></div>

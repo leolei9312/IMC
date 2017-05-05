@@ -41,7 +41,6 @@ $(function(){
 		//$(this).parent().parent().find('div.product-chooser-item').removeClass('selected');
 		if(!$(this).hasClass('selected')){
       $(this).addClass('selected');
-
     }
     else{
       $(this).removeClass('selected');
