@@ -7,13 +7,18 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AF {
   public marketers: FirebaseObjectObservable<any>;
+  uid : string
   constructor(public af: AngularFire, public router : Router) {
+    this.af.auth.subscribe((data) => {
+      console.log(data);
+      this.uid = data.uid;
+    });
   }
 
   //add new or read marketers to database
   AddMarketer(form:any){
     this.af.auth.createUser({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
-      this.marketers = this.af.database.object('marketers/' + form.controls['name'].value);
+      this.marketers = this.af.database.object('marketers/' + success.uid);
       this.marketers.subscribe((obj) => {
           let newMarketer = {
             Email: form.controls['email'].value,
@@ -21,7 +26,11 @@ export class AF {
             Company: form.controls['company'].value,
             TeamSize: form.controls['teamsize'].value,
             Industry: form.controls['industry'] ? form.controls['industry'].value : '',
-            Type: form.controls['type'] ? form.controls['type'].value : ''
+            Type: form.controls['type'] ? form.controls['type'].value : '',
+            Stage1 : [''],
+            Stage2 : [''],
+            Stage3 : 0,
+            Stage4 : ""
           };
           this.marketers.update(newMarketer).then(success=>{
             this.router.navigate(['/marprofile']);
@@ -37,7 +46,7 @@ export class AF {
   //add new vendors to database
   AddVendor(form:any){
     this.af.auth.createUser({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
-      this.marketers = this.af.database.object('vendors/' + form.controls['name'].value);
+      this.marketers = this.af.database.object('vendors/' + success.uid);
       this.marketers.subscribe((obj) => {
           let newVendor = {
             Email: form.controls['email'].value,
@@ -83,6 +92,8 @@ export class AF {
     });
   }
 
+  SubmitProfile(){
 
+  }
 
 }
