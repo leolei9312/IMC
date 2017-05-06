@@ -8,5 +8,24 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrls: ['./set.css']
 })
 export class ConsiderationSet {
+  mystack = [
+    {"icon" : "glyphicon glyphicon-home",
+     "name" : "Salesforce",
+     "description" : "Salesforce is a big company.",
+     "link" : "https://www.salesforce.com"
+    },
+    {"icon" : "glyphicon glyphicon-home",
+     "name" : "Google",
+     "description" : "Google is a big company.",
+     "link" : "https://www.google.com"
+    },
+    {"icon" : "glyphicon glyphicon-home",
+     "name" : "Facebook",
+     "description" : "Facebook is a big company.",
+     "link" : "https://www.facebook.com"
+    }
+  ];
+  constructor(public af : AF){
 
+  }
 }
