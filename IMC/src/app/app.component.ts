@@ -11,7 +11,8 @@ export class AppComponent {
   public marlogin : string = "Marketer Login";
   public venlogin : string = "Vendor Login";
   public profile : string = "Profile";
-
+  public search : string = "Search";
+  public set : string = "Set";
   constructor(public af : AF){
     this.af.af.auth.subscribe((data) => {
       if(data) this.isLogin = true;
@@ -22,7 +23,7 @@ export class AppComponent {
   onMarketerSignIn(form:NgForm){
     this.af.checkMarketer(form);
   }
-  
+
   onVendorSignIn(form:NgForm){
     this.af.checkVendor(form);
   }

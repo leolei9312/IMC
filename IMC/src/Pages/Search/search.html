@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row text-center">
+    <h2>{{(af.marketers | async)?.Name}}, Please Add Your MarTech Stack</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="IT Company">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" disabled="true"></button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div>
+  <div class="row">
+    <div class="back">
+      <div class="button_base b02_slide_in">
+        <div>Search</div>
+        <div></div>
+        <div>Search</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 text-center">
+      <h3>Search Result</h3>
+      <div class="col-lg-12">
+        <ul class="list-group" *ngFor="let result of result">
+          <li class="list-group-item"><span class="{{result.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{result.name}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 text-center">
+      <h3>My Stack</h3>
+      <div class="col-lg-12">
+        <ul class="list-group" *ngFor="let mystack of mystack">
+          <li class="list-group-item"><span class="{{mystack.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mystack.name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

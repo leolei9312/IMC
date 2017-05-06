@@ -39,7 +39,7 @@
                 </ul>
             </div>
 
-            <form role="form" #marprofile="ngForm" (ngSubmit)="SubmitProfile(marprofile)">
+            <form role="form" #marprofile="ngForm" (ngSubmit)="SubmitMarketerProfile(marprofile)">
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <h3>Step 1: Campaign Management Stages</h3>
@@ -63,12 +63,12 @@
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
                         <h3>Step 2: Campaign Management Concerns</h3>
-                        <div id="stage2-parent" class="row form-group product-chooser">
-                          <div id="stage2" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <div id="stage2-parent" class="row form-group product-chooser text-center">
+                          <div id="stage2" class="col-lg-12 text-center">
                             <div class="funkyradio">
                                 <div class="funkyradio-default" *ngFor="let stage of stage2">
                                     <input type="checkbox" name="checkbox" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.name}}"/>
-                                    <label for="{{stage.name}}">{{stage.name}}</label>
+                                    <label for="{{stage.name}}">{{stage.value}}</label>
                                 </div>
                             </div>
                           </div>

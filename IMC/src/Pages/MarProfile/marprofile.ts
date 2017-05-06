@@ -10,21 +10,21 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class MarProfile {
   test : string;
   stage2 = [
-    {"name" : '1', "value" : '1', 'ischecked' : false},
-    {"name" : '2', "value" : '2', 'ischecked' : false},
-    {"name" : '3', "value" : '3', 'ischecked' : false},
-    {"name" : '4', "value" : '4', 'ischecked' : false},
-    {"name" : '5', "value" : '5', 'ischecked' : false},
-    {"name" : '6', "value" : '6', 'ischecked' : false},
+    {"name" : '1', "value" : 'Audience Segmentation', 'ischecked' : false},
+    {"name" : '2', "value" : 'Customer Journey Mapping', 'ischecked' : false},
+    {"name" : '3', "value" : 'Lead Generation', 'ischecked' : false},
+    {"name" : '4', "value" : 'Content Development', 'ischecked' : false},
+    {"name" : '5', "value" : 'Email Automation', 'ischecked' : false},
+    {"name" : '6', "value" : 'Multi-channel Campaign Management', 'ischecked' : false},
   ];
   stage1 = [
     {
       "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
       "title" : "Planning",
-      "Description" : "Click here if you are Planning to do marketing work.",
+      "Description" : "Click here if you are doing Planning in Campaign Management.",
       "ischecked" : false,
       "value" : "Planning",
-      "id" : 1
+      "id" : 0
     },
     {
       "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
@@ -32,7 +32,7 @@ export class MarProfile {
       "Description" : "Click here if you are doing Execution in Campaign Management.",
       "ischecked" : false,
       "value" : "Execution",
-      "id" : 2
+      "id" : 1
     },
     {
       "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
@@ -40,7 +40,7 @@ export class MarProfile {
       "Description" : "Click here if you are doing Tracking in Campaign Management.",
       "ischecked" : false,
       "value" : "Tracking",
-      "id" : 3
+      "id" : 2
     },
     {
       "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
@@ -48,7 +48,7 @@ export class MarProfile {
       "Description" : "Click here if you are doing Analysis in Campaign Management.",
       "ischecked" : false,
       "value" : "Analysis",
-      "id" : 4
+      "id" : 3
     },
   ];
   constructor(public af:AF){
@@ -61,7 +61,7 @@ export class MarProfile {
     this.stage1[id].ischecked = true;
   }
 
-  SubmitProfile(form : NgForm){
+  SubmitMarketerProfile(form : NgForm){
     //for stage1
     let tempstage1 = [];
     for(var i = 0; i < this.stage1.length; i ++){
@@ -71,6 +71,12 @@ export class MarProfile {
     for(var i = 0; i < this.stage2.length; i ++){
       if(this.stage2[i].ischecked) tempstage2.push(this.stage2[i]);
     }
-    console.log(tempstage1, tempstage2);
+    let profile = {
+      Stage1 : tempstage1,
+      Stage2 : tempstage2,
+      Stage3 : form.controls['budget'].value,
+      Stage4 : form.controls['requirement'].value
+    };
+    this.af.SubmitMarketerProfile(profile);
   }
 }

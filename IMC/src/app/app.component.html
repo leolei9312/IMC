@@ -21,6 +21,12 @@
                     <a class="page-scroll" href="/marprofile">{{profile}}</a>
                 </li>
                 <li *ngIf="isLogin">
+                    <a class="page-scroll" href="/search">{{search}}</a>
+                </li>
+                <li *ngIf="isLogin">
+                    <a class="page-scroll" href="/considerationset">{{set}}</a>
+                </li>
+                <li *ngIf="isLogin">
                     <a class="page-scroll" href="#" (click)='logout()'>LogOut</a>
                 </li>
             </ul>

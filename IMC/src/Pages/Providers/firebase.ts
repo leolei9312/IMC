@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AF {
   public marketers: FirebaseObjectObservable<any>;
+  public vendors: FirebaseObjectObservable<any>;
   uid : string
   constructor(public af: AngularFire, public router : Router) {
+
     this.af.auth.subscribe((data) => {
-      console.log(data);
       this.uid = data.uid;
+      this.marketers = this.af.database.object('marketers/' + data.uid);
     });
   }
 
@@ -46,8 +48,8 @@ export class AF {
   //add new vendors to database
   AddVendor(form:any){
     this.af.auth.createUser({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
-      this.marketers = this.af.database.object('vendors/' + success.uid);
-      this.marketers.subscribe((obj) => {
+      this.vendors = this.af.database.object('vendors/' + success.uid);
+      this.vendors.subscribe((obj) => {
           let newVendor = {
             Email: form.controls['email'].value,
             Name: form.controls['name'].value,
@@ -56,8 +58,7 @@ export class AF {
             Industry: form.controls['industry'] ? form.controls['industry'].value : '',
             Type: form.controls['type'] ? form.controls['type'].value : ''
           };
-          this.marketers.update(newVendor).then(success=>{
-            console.log(success);
+          this.vendors.update(newVendor).then(success=>{
             this.router.navigate(['/marprofile']);
           }, error=>{
             console.log(error);
@@ -70,7 +71,6 @@ export class AF {
 
   checkMarketer(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
-      console.log('success');
       this.router.navigate(['/marprofile']);
     }, err => {
       alert('Email or Password is incorrect.');
@@ -79,7 +79,6 @@ export class AF {
 
   checkVendor(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value}).then(success => {
-      console.log('success');
       this.router.navigate(['/marprofile']);
     }, err => {
       alert('Email or Password is incorrect.');
@@ -92,8 +91,13 @@ export class AF {
     });
   }
 
-  SubmitProfile(){
-
+  SubmitMarketerProfile(profile : any){
+    this.marketers = this.af.database.object('marketers/' + this.uid);
+    this.marketers.update(profile).then(success=>{
+      this.router.navigate(['/search']);
+    }, error=>{
+      console.log(error);
+    });
   }
 
 }

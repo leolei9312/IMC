@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { Home } from '../Pages/Home/home';
 import { MarProfile } from '../Pages/MarProfile/marprofile';
+import { SearchPage } from '../Pages/Search/search';
+import { ConsiderationSet } from '../Pages/ConsiderationSet/set';
 import { AppRoutingModule } from './router';
 import { AF } from '../Pages/Providers/firebase';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -25,7 +27,9 @@ const myFirebaseAuthConfig = {
   declarations: [
     AppComponent,
     Home,
-    MarProfile
+    MarProfile,
+    SearchPage,
+    ConsiderationSet
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ const myFirebaseAuthConfig = {
   providers: [
     AF,
     Home,
-    MarProfile
+    MarProfile,
+    SearchPage,
+    ConsiderationSet
   ],
   bootstrap: [
     AppComponent
