@@ -32,7 +32,8 @@ export class AF {
             Stage1 : [''],
             Stage2 : [''],
             Stage3 : 0,
-            Stage4 : ""
+            Stage4 : "",
+            MartechStack : ['']
           };
           this.marketers.update(newMarketer).then(success=>{
             this.router.navigate(['/marprofile']);

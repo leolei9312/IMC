@@ -28,4 +28,14 @@ export class ConsiderationSet {
   constructor(public af : AF){
 
   }
+  delete(name) : void{
+    for(var i = 0; i < this.mystack.length; i ++){
+      if(this.mystack[i].name == name){
+        this.mystack.splice(i, 1);
+        return ;
+      }
+    }
+  }
+
+
 }
