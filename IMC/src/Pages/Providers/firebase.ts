@@ -60,7 +60,7 @@ export class AF {
             Type: form.controls['type'] ? form.controls['type'].value : ''
           };
           this.vendors.update(newVendor).then(success=>{
-            this.router.navigate(['/marprofile']);
+            this.router.navigate(['/search']);
           }, error=>{
             console.log(error);
           });
@@ -80,7 +80,7 @@ export class AF {
 
   checkVendor(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value}).then(success => {
-      this.router.navigate(['/marprofile']);
+      this.router.navigate(['/search']);
     }, err => {
       alert('Email or Password is incorrect.');
     });
@@ -113,6 +113,10 @@ export class AF {
   DeleteTech(mystack){
     let temp = {MartechStack : mystack};
     this.marketers.update(temp);
+  }
+
+  navigator(){
+    this.router.navigate(['/marprofile']);
   }
 
 }

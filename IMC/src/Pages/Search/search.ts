@@ -52,4 +52,8 @@ export class SearchPage {
     return ;
   }
 
+  navigator(){
+    this.af.navigator();
+  }
+
 }
