@@ -12,8 +12,7 @@ export class AF {
   constructor(public af: AngularFire, public router : Router) {
 
     this.af.auth.subscribe((data) => {
-      this.uid = data.uid;
-      this.marketers = this.af.database.object('marketers/' + data.uid);
+      this.marketers = data ? this.af.database.object('marketers/' + data.uid) : null;
     });
   }
 
@@ -36,7 +35,8 @@ export class AF {
             MartechStack : []
           };
           this.marketers.update(newMarketer).then(success=>{
-            this.router.navigate(['/marprofile']);
+            this.router.navigate(['home']);
+            window.setTimeout(function(){window.location.assign("search")}, 1000);
           }, error=>{
             console.log(error);
           });
@@ -60,7 +60,8 @@ export class AF {
             Type: form.controls['type'] ? form.controls['type'].value : ''
           };
           this.vendors.update(newVendor).then(success=>{
-            this.router.navigate(['/search']);
+            this.router.navigate(['home']);
+            window.setTimeout(function(){window.location.assign("search")}, 1000);
           }, error=>{
             console.log(error);
           });
@@ -72,7 +73,8 @@ export class AF {
 
   checkMarketer(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value }).then(success => {
-      this.router.navigate(['/marprofile']);
+      this.router.navigate(['home']);
+      window.setTimeout(function(){window.location.assign("search")}, 1000);
     }, err => {
       alert('Email or Password is incorrect.');
     });
@@ -80,7 +82,8 @@ export class AF {
 
   checkVendor(form:any){
     this.af.auth.login({ email: form.controls['email'].value, password: form.controls['psw'].value}).then(success => {
-      this.router.navigate(['/search']);
+      this.router.navigate(['home']);
+      window.setTimeout(function(){window.location.assign("search")}, 1000);
     }, err => {
       alert('Email or Password is incorrect.');
     });
@@ -88,14 +91,14 @@ export class AF {
 
   logout(){
     this.af.auth.logout().then(success => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['home']);
     });
   }
 
   SubmitMarketerProfile(profile : any){
     this.marketers = this.af.database.object('marketers/' + this.uid);
     this.marketers.update(profile).then(success=>{
-      this.router.navigate(['/search']);
+      this.router.navigate(['considerationset']);
     }, error=>{
       console.log(error);
     });
@@ -115,8 +118,6 @@ export class AF {
     this.marketers.update(temp);
   }
 
-  navigator(){
-    this.router.navigate(['/marprofile']);
-  }
+  
 
 }

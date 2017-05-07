@@ -52,9 +52,7 @@ export class MarProfile {
     },
   ];
   constructor(public af:AF){
-    this.af.af.auth.subscribe((data) => {
-
-    });
+    console.log('enter');
   }
 
   ClickStage1(id){

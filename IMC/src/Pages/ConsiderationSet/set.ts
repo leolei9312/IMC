@@ -11,7 +11,7 @@ export class ConsiderationSet {
   mystack = [];
   constructor(public af : AF){
     this.af.af.auth.subscribe((data) => {
-      this.af.marketers = this.af.af.database.object('marketers/' + data.uid);
+      this.af.marketers = data ? this.af.af.database.object('marketers/' + data.uid) : null;
       this.af.marketers.subscribe((data) => {
         console.log(data);
         this.mystack = data.MartechStack ? data.MartechStack : [];
