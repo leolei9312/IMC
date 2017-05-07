@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class AF {
   public marketers: FirebaseObjectObservable<any>;
   public vendors: FirebaseObjectObservable<any>;
-  uid : string
+  uid : string;
   constructor(public af: AngularFire, public router : Router) {
 
     this.af.auth.subscribe((data) => {
@@ -33,7 +33,7 @@ export class AF {
             Stage2 : [''],
             Stage3 : 0,
             Stage4 : "",
-            MartechStack : ['']
+            MartechStack : []
           };
           this.marketers.update(newMarketer).then(success=>{
             this.router.navigate(['/marprofile']);
@@ -99,6 +99,20 @@ export class AF {
     }, error=>{
       console.log(error);
     });
+  }
+
+  AddTech(newTech){
+    let temp = {MartechStack : []};
+    this.marketers.subscribe((data) => {
+      temp.MartechStack = data.MartechStack ?  data.MartechStack : [];
+      temp.MartechStack.push(newTech);
+    });
+    this.marketers.update(temp);
+  }
+
+  DeleteTech(mystack){
+    let temp = {MartechStack : mystack};
+    this.marketers.update(temp);
   }
 
 }

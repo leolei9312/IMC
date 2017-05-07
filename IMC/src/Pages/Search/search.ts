@@ -11,31 +11,45 @@ export class SearchPage {
 
   result = [
     {"icon" : "glyphicon glyphicon-home",
-     "name" : "Salesforce"
+     "name" : "Salesforce",
+     "description" : "Salesforce is a big company"
     },
     {"icon" : "glyphicon glyphicon-home",
-     "name" : "Google"
+     "name" : "Google",
+     "description" : "Google is a big company"
     },
     {"icon" : "glyphicon glyphicon-home",
-     "name" : "Facebook"
+     "name" : "Facebook",
+     "description" : "Facebook is a big company"
     },
     {"icon" : "glyphicon glyphicon-home",
-     "name" : "IBM"
+     "name" : "IBM",
+     "description" : "IBM is a big company"
     }
   ];
-  mystack = [
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Salesforce"
-    },
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Google"
-    },
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Facebook"
-    }
-  ];
+  mystack = [];
   public profile : any;
   constructor(public af : AF){
-    console.log(this.af.marketers);
+    this.af.af.auth.subscribe((data) => {
+      this.af.marketers = this.af.af.database.object('marketers/' + data.uid);
+      this.af.marketers.subscribe((data) => {
+        console.log(data);
+        this.mystack = data.MartechStack ? data.MartechStack : [];
+      });
+    });
   }
+
+
+  AddTech(name) : void{
+    for(var i = 0; i < this.result.length; i ++){
+      if(this.result[i].name == name){
+        let temp = this.result[i];
+        this.af.AddTech(temp);
+        this.result.splice(i, 1);
+        return ;
+      }
+    }
+    return ;
+  }
+
 }
