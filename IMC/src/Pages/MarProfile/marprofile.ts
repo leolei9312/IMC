@@ -51,8 +51,10 @@ export class MarProfile {
       "id" : 3
     },
   ];
-  constructor(public af:AF){
-    console.log('enter');
+
+
+  constructor(public af:AF ){
+
   }
 
   ClickStage1(id){
