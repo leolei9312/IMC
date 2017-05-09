@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { Home } from '../Pages/Home/home';
 import { MarProfile } from '../Pages/MarProfile/marprofile';
+import { VenProfile } from '../Pages/VenProfile/venprofile';
 import { SearchPage } from '../Pages/Search/search';
 import { ConsiderationSet } from '../Pages/ConsiderationSet/set';
 import { AppRoutingModule } from './router';
@@ -29,7 +30,8 @@ const myFirebaseAuthConfig = {
     Home,
     MarProfile,
     SearchPage,
-    ConsiderationSet
+    ConsiderationSet,
+    VenProfile
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ const myFirebaseAuthConfig = {
     Home,
     MarProfile,
     SearchPage,
-    ConsiderationSet
+    ConsiderationSet,
+    VenProfile
   ],
   bootstrap: [
     AppComponent

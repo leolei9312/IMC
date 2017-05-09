@@ -1,0 +1,78 @@
+<div class="container">
+  <h2 class="text-center margin">Build your vendor profile</h2>
+  <div class="panel panel-default margin" *ngFor="let product of products">
+    <div class="panel-heading">
+      <h3 class="panel-title">Product: {{NumProduct}}</h3>
+    </div>
+    <div class="panel-body">
+      <form role="form" #venproduct="ngForm" (ngSubmit)="SubmitVendorProduct(venproduct)">
+        <div class="row">
+          <div class="col-lg-3">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" ngModel>
+          </div>
+          <div class="col-lg-3">
+            <label>Price</label>
+            <input type="text" class="form-control" name="price" ngModel>
+          </div>
+          <div class="col-lg-3">
+            <label>B2B/B2C</label>
+            <select ngModel name="type" class="col-sm-8 form-control form-control-sm">
+              <option value="">Select B2B or B2C</option>
+              <option value="B2B">B2B</option>
+              <option value="B2C">B2C</option>
+            </select>
+          </div>
+          <div class="col-lg-3">
+            <label>Data Scopte</label>
+            <input type="text" class="form-control" name="datascope" ngModel>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="text-margin">Choose one or more stages of campaign management your product addresses:</h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="funkyradio">
+              <div class="funkyradio-default">
+                  <input type="checkbox" name="checkbox" id="planning"/>
+                  <label for="planning">Planning</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="funkyradio">
+              <div class="funkyradio-default">
+                  <input type="checkbox" name="checkbox" id="execution"/>
+                  <label for="execution">Execution</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="funkyradio">
+              <div class="funkyradio-default">
+                  <input type="checkbox" name="checkbox" id="tracking"/>
+                  <label for="tracking">Tracking</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="funkyradio">
+              <div class="funkyradio-default">
+                  <input type="checkbox" name="checkbox" id="analysis"/>
+                  <label for="analysis">Analysis</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="text-margin">Choose one or more campaign concerns your product addresses:</h4>
+        </div>
+        <!-- create the button group for the campaign concerns -->
+        <div class="row">
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
