@@ -86,3 +86,16 @@
   color: #ef5615;
   background-color: #ccc;
 }
+
+.selectmargin{
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.marginbot{
+  margin-bottom: 5%;
+}
+.rightside{
+  margin-top: 5%;
+  margin-left: 80%;
+}

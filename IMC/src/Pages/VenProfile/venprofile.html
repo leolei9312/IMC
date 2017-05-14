@@ -2,10 +2,11 @@
   <h2 class="text-center margin">Build your vendor profile</h2>
   <div class="panel panel-default margin" *ngFor="let product of products">
     <div class="panel-heading">
-      <h3 class="panel-title">Product: {{NumProduct}}</h3>
+      <h3 class="panel-title">Product: {{product.id}}</h3>
     </div>
     <div class="panel-body">
       <form role="form" #venproduct="ngForm" (ngSubmit)="SubmitVendorProduct(venproduct)">
+        <!-- create input group for basic information -->
         <div class="row">
           <div class="col-lg-3">
             <label>Name</label>
@@ -24,43 +25,20 @@
             </select>
           </div>
           <div class="col-lg-3">
-            <label>Data Scopte</label>
+            <label>Data Scope</label>
             <input type="text" class="form-control" name="datascope" ngModel>
           </div>
         </div>
+        <!-- create button group for stage choose -->
         <div class="row">
           <h4 class="text-margin">Choose one or more stages of campaign management your product addresses:</h4>
         </div>
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-3" *ngFor="let stage of stage">
             <div class="funkyradio">
               <div class="funkyradio-default">
-                  <input type="checkbox" name="checkbox" id="planning"/>
-                  <label for="planning">Planning</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="funkyradio">
-              <div class="funkyradio-default">
-                  <input type="checkbox" name="checkbox" id="execution"/>
-                  <label for="execution">Execution</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="funkyradio">
-              <div class="funkyradio-default">
-                  <input type="checkbox" name="checkbox" id="tracking"/>
-                  <label for="tracking">Tracking</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="funkyradio">
-              <div class="funkyradio-default">
-                  <input type="checkbox" name="checkbox" id="analysis"/>
-                  <label for="analysis">Analysis</label>
+                  <input type="checkbox" name="checkbox" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.value}}"/>
+                  <label for="{{stage.value}}">{{stage.value}}</label>
               </div>
             </div>
           </div>
@@ -69,10 +47,18 @@
           <h4 class="text-margin">Choose one or more campaign concerns your product addresses:</h4>
         </div>
         <!-- create the button group for the campaign concerns -->
-        <div class="row">
 
+        <div class="col-lg-4 selectmargin" *ngFor="let concern of concerns">
+          <div class="funkyradio">
+            <div class="funkyradio-default">
+                <input type="checkbox" name="checkbox" (change)="concern.ischecked=$event.target.checked ? true : false" [ngModel]="concern.ischecked" id="{{concern.name}}"/>
+                <label for="{{concern.name}}">{{concern.value}}</label>
+            </div>
+          </div>
         </div>
+        <button *ngIf="product.id == NumProduct" type="submit" class="btn btn-primary btn-info-full rightside">Submit Products</button>
       </form>
     </div>
   </div>
+  <button type="button" class="btn btn-default prev-step marginbot" (click)="CreateNewProduct()">+ New Product</button>
 </div>

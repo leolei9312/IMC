@@ -9,14 +9,61 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class VenProfile {
   products = [
-    {"name" : "Google",
-     "price" : 1000
+    {
+     "id" : 1
     }
   ];
+
+  stage = [
+    {
+      "title" : "Planning",
+      "ischecked" : false,
+      "value" : "Planning",
+      "id" : 0
+    },
+    {
+      "title" : "Execution",
+      "ischecked" : false,
+      "value" : "Execution",
+      "id" : 1
+    },
+    {
+      "title" : "Tracking",
+      "ischecked" : false,
+      "value" : "Tracking",
+      "id" : 2
+    },
+    {
+      "title" : "Analysis",
+      "ischecked" : false,
+      "value" : "Analysis",
+      "id" : 3
+    },
+  ];
+
+  concerns = [
+    {"name" : '1', "value" : 'Audience Segmentation', 'ischecked' : false},
+    {"name" : '2', "value" : 'Customer Journey Mapping', 'ischecked' : false},
+    {"name" : '3', "value" : 'Lead Generation', 'ischecked' : false},
+    {"name" : '4', "value" : 'Content Development', 'ischecked' : false},
+    {"name" : '5', "value" : 'Email Automation', 'ischecked' : false},
+    {"name" : '6', "value" : 'Multi-channel Campaign Management', 'ischecked' : false},
+  ];
+
   NumProduct = 1;
   constructor(public af:AF ){
-
+    console.log(this.stage);
   }
 
+  SubmitVendorProduct(form){
+    console.log(this.stage, this.concerns);
+  }
+  CreateNewProduct(){
+    this.NumProduct ++;
+    let newproduct = {
+      id : this.NumProduct
+    }
+    this.products.push(newproduct);
+  }
 
 }
