@@ -1,0 +1,25 @@
+<div class="margin text-center">
+  <h1>Your TOP 10 Matches</h1>
+</div>
+<div class="container margin text-center">
+  <div class="row">
+    <!-- match result -->
+    <div class="col-lg-6">
+      <h3>Matching Result</h3>
+      <div class="col-lg-12">
+        <ul class="list-group" *ngFor="let result of results">
+          <li class="list-group-item"><span class="{{result.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{result.name}}<button type="button" class="close" (click)="AddTech(result.name)">＋</button></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Your stack -->
+    <div class="col-lg-6">
+      <h3>Your Stack</h3>
+      <div class="col-lg-12">
+        <ul class="list-group" *ngFor="let result of mystack">
+          <li class="list-group-item"><span class="{{result.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{result.name}}<button type="button" class="close" (click)="AddTech(result.name)">&times;</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

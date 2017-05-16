@@ -8,6 +8,7 @@ import { MarProfile } from '../Pages/MarProfile/marprofile';
 import { VenProfile } from '../Pages/VenProfile/venprofile';
 import { SearchPage } from '../Pages/Search/search';
 import { ConsiderationSet } from '../Pages/ConsiderationSet/set';
+import { MatchPage } from '../Pages/MatchPage/matchpage';
 import { AppRoutingModule } from './router';
 import { AF } from '../Pages/Providers/firebase';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -31,7 +32,8 @@ const myFirebaseAuthConfig = {
     MarProfile,
     SearchPage,
     ConsiderationSet,
-    VenProfile
+    VenProfile,
+    MatchPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ const myFirebaseAuthConfig = {
     MarProfile,
     SearchPage,
     ConsiderationSet,
-    VenProfile
+    VenProfile,
+    MatchPage
   ],
   bootstrap: [
     AppComponent
