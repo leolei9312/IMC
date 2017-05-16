@@ -56,8 +56,9 @@ export class VenProfile {
   }
 
   SubmitVendorProduct(form){
-    console.log(this.stage, this.concerns);
+    //this.af.router.navigate();
   }
+
   CreateNewProduct(){
     this.NumProduct ++;
     let newproduct = {
