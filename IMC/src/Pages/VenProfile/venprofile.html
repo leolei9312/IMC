@@ -12,21 +12,42 @@
             <label>Name</label>
             <input type="text" class="form-control" name="name" ngModel>
           </div>
-          <div class="col-lg-3">
-            <label>Price</label>
-            <input type="text" class="form-control" name="price" ngModel>
+          <div class="col-lg-2">
+            <label>Min Price</label>
+            <input type="text" class="form-control" name="minprice" ngModel>
+          </div>
+          <div class="col-lg-2">
+            <label>Max Price</label>
+            <input type="text" class="form-control" name="maxprice" ngModel>
           </div>
           <div class="col-lg-3">
-            <label>B2B/B2C</label>
+            <label>Type of Focus</label>
             <select ngModel name="type" class="col-sm-8 form-control form-control-sm">
               <option value="">Select B2B or B2C</option>
               <option value="B2B">B2B</option>
               <option value="B2C">B2C</option>
             </select>
           </div>
+        </div>
+        <div class="row">
           <div class="col-lg-3">
             <label>Data Scope</label>
             <input type="text" class="form-control" name="datascope" ngModel>
+          </div>
+          <div class="col-lg-3">
+            <label>Telephone</label>
+            <input type="text" class="form-control" name="tel" ngModel>
+          </div>
+          <div class="col-lg-3">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" ngModel>
+          </div>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="complete">
+          <label>Description</label>
+          <div class="item-container">
+            <ul class="item-list"></ul>
+            <textarea id="item-text" ngModel name="requirement" rows="10" placeholder="Input description of this product"></textarea>
           </div>
         </div>
         <!-- create button group for stage choose -->

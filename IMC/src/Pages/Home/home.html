@@ -1,10 +1,10 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <h1 id="homeHeading">Find Your Market Tech</h1>
+            <h1 id="homeHeading">PITCH PERFECT</h1>
             <hr class="light">
-            <p>We offer a stage allowing you to search for the marketing technologies fit you best</p>
-            <a href="#intro" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            <p>Find the perfect marketing technology through relevant pitches from vendors</p>
+            <a href="#intro" class="btn btn-primary btn-xl page-scroll">Let's get started</a>
         </div>
     </div>
 </header>
@@ -26,11 +26,11 @@
     <div class="container">
         <div class="row">
           <div class="col-lg-6 text-center">
-            <h2 class="section-heading">Marketers Register</h2>
+            <h2 class="section-heading">Marketers Sign-up</h2>
             <hr class="primary">
           </div>
           <div class="col-lg-6 text-center">
-              <h2 class="section-heading">Vendors Register</h2>
+              <h2 class="section-heading">Vendor Sign-up</h2>
               <hr class="primary">
           </div>
         </div>
@@ -77,12 +77,16 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Type</p>
+                  <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Company Focus</p>
                   <div class="col-sm-8">
                     <select ngModel name="type" class="col-sm-8 form-control form-control-sm">
-                      <option value="">Select B2B or B2C</option>
-                      <option value="B2B">B2B</option>
-                      <option value="B2C">B2C</option>
+                      <option value="">Select Company Focus</option>
+                      <option value="B2B">Business to Business(B2B)</option>
+                      <option value="B2C">Business to Consumers(B2C)</option>
+                      <option value="NPO">Non-Profit(NPO)</option>
+                      <option value="Government">Government</option>
+                      <option value="Agency">Agency</option>
+                      <option value="Consultant">Consultant</option>
                     </select>
                   </div>
                 </div>
@@ -121,6 +125,18 @@
                   <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Team Size</p>
                   <div class="col-sm-8">
                     <input type="number" name="teamsize" required class="form-control" ngModel placeholder="@5">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Telephone</p>
+                  <div class="col-sm-8">
+                    <input type="text" name="tel" required class="form-control" ngModel placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <p for="inputHorizontalSuccess" class="col-sm-2 col-form-label">LinkedIn</p>
+                  <div class="col-sm-8">
+                    <input type="text" name="linkedin" required class="form-control" ngModel placeholder="">
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">GO</button>

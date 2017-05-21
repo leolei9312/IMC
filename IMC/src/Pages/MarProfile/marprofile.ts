@@ -19,37 +19,45 @@ export class MarProfile {
   ];
   stage1 = [
     {
-      "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
+      "img" : "assets/img/edit.png",
       "title" : "Planning",
-      "Description" : "Click here if you are doing Planning in Campaign Management.",
+      "Description" : "Creating a marketing campaign plan and schedule.",
       "ischecked" : false,
       "value" : "Planning",
       "id" : 0
     },
     {
-      "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
+      "img" : "assets/img/execution.png",
       "title" : "Execution",
-      "Description" : "Click here if you are doing Execution in Campaign Management.",
+      "Description" : "Having the marketing campaign start getting executed. IMPLEMENTATION",
       "ischecked" : false,
       "value" : "Execution",
       "id" : 1
     },
     {
-      "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
+      "img" : "assets/img/tracking.png",
       "title" : "Tracking",
-      "Description" : "Click here if you are doing Tracking in Campaign Management.",
+      "Description" : "Monitoring the marketing campaign.",
       "ischecked" : false,
       "value" : "Tracking",
       "id" : 2
     },
     {
-      "img" : "http://renswijnmalen.nl/bootstrap/desktop_mobile.png",
+      "img" : "assets/img/analysis.png",
       "title" : "Analysis",
-      "Description" : "Click here if you are doing Analysis in Campaign Management.",
+      "Description" : "Click here if you are doing Analysis in Campaign Management.Setting benchmarks and evaluating the marketing campaign performance.",
       "ischecked" : false,
       "value" : "Analysis",
       "id" : 3
     },
+    {
+      "img" : "assets/img/automation.png",
+      "title" : "Marketing Automation",
+      "Description" : "Using technologies to generate and personalize content to individuals.",
+      "ischecked" : false,
+      "value" : "Automation",
+      "id" : 4
+    }
   ];
 
 
