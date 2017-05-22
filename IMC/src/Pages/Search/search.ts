@@ -10,25 +10,22 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class SearchPage {
 
   result = [
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Salesforce",
-     "description" : "Salesforce is a big company"
+    {"icon" : "./assets/img/epictrack.png",
+     "name" : "Epictrack"
     },
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Google",
-     "description" : "Google is a big company"
+    {"icon" : "./assets/img/mailchimp.png",
+     "name" : "Mailchimp"
     },
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "Facebook",
-     "description" : "Facebook is a big company"
+    {"icon" : "./assets/img/marketo.jpg",
+     "name" : "Marketo"
     },
-    {"icon" : "glyphicon glyphicon-home",
-     "name" : "IBM",
-     "description" : "IBM is a big company"
+    {"icon" : "./assets/img/optimizely.png",
+     "name" : "Optimizely"
     }
   ];
   mystack = [];
   public profile : any;
+  public showresult : boolean = false;
 
   constructor(public af : AF){
     this.af.af.auth.subscribe((data) => {
@@ -39,7 +36,9 @@ export class SearchPage {
       });
     });
   }
-
+  show(){
+    this.showresult = true;
+  }
 
   AddTech(name) : void{
     for(var i = 0; i < this.result.length; i ++){

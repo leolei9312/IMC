@@ -74,6 +74,7 @@
             <div class="funkyradio-default">
                 <input type="checkbox" name="checkbox" (change)="concern.ischecked=$event.target.checked ? true : false" [ngModel]="concern.ischecked" id="{{concern.name}}"/>
                 <label for="{{concern.name}}">{{concern.value}}</label>
+                <span class="tooltiptext">{{concern.tooltip}}</span>
             </div>
           </div>
         </div>

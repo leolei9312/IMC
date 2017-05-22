@@ -42,12 +42,24 @@ export class VenProfile {
   ];
 
   concerns = [
-    {"name" : '1', "value" : 'Audience Segmentation', 'ischecked' : false},
-    {"name" : '2', "value" : 'Customer Journey Mapping', 'ischecked' : false},
-    {"name" : '3', "value" : 'Lead Generation', 'ischecked' : false},
-    {"name" : '4', "value" : 'Content Development', 'ischecked' : false},
-    {"name" : '5', "value" : 'Email Automation', 'ischecked' : false},
-    {"name" : '6', "value" : 'Multi-channel Campaign Management', 'ischecked' : false},
+  {"name" : '1', "value" : 'Audience Segmentation', 'ischecked' : false,
+   'tooltip' : '1. Task Workflows Design. 2. Customer Targeting. 3. Multi-channel Campaign Planning. 4. Publish Scheduling.'
+  },
+  {"name" : '2', "value" : 'Customer Journey Mapping', 'ischecked' : false,
+   'tooltip' : '1. Multi-channel Communications. 2. Content Management. 3. Influencer Marketing. 4. SEO Management. 5. Social Media Marketing. 6. Mobile Marketing. 7. Email Marketing.'
+  },
+  {"name" : '3', "value" : 'Lead Generation', 'ischecked' : false,
+   'tooltip' : '1. Campaign Process Tracking/ Monitoring. 2. Budget Tracking.'
+  },
+  {"name" : '4', "value" : 'Content Development', 'ischecked' : false,
+   'tooltip' : '1. Benchmarking. 2. Data Exchange (Customer/ Campaign Data). 3. Conversion Tracking.'
+  },
+  {"name" : '5', "value" : 'Email Automation', 'ischecked' : false,
+   'tooltip' : '1. Website/ Email Personalization. 2. Lead Scoring. 3. Campaign Testing. 4. Event Triggering.'
+  },
+  {"name" : '6', "value" : 'Multi-channel Campaign Management', 'ischecked' : false,
+   'tooltip' : '6'
+  }
   ];
 
   NumProduct = 1;

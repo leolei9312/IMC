@@ -69,6 +69,7 @@
                                 <div class="funkyradio-default" *ngFor="let stage of stage2">
                                     <input type="checkbox" name="checkbox" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.name}}"/>
                                     <label for="{{stage.name}}">{{stage.value}}</label>
+																		<span class="tooltiptext">{{stage.tooltip}}</span>
                                 </div>
                             </div>
                           </div>

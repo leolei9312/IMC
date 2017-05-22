@@ -326,3 +326,25 @@ div.product-chooser{
   margin-left: 1.5%;
   margin-right: 1.5%;
 }
+
+
+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    /*width: 200px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;*/
+}
+
+.funkyradio-default:hover .tooltiptext {
+    visibility: visible;
+}
