@@ -1,25 +1,79 @@
 <div class="margin text-center">
-  <h1>Your TOP 10 Matches</h1>
+  <h1>Match Results</h1>
 </div>
-<div class="container margin text-center">
-  <div class="row">
-    <!-- match result -->
-    <div class="col-lg-6">
-      <h3>Matching Result</h3>
-      <div class="col-lg-12">
-        <ul class="list-group" *ngFor="let result of results">
-          <li class="list-group-item"><span class="{{result.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{result.name}}<button type="button" class="close" (click)="AddTech(result.name)">＋</button></li>
-        </ul>
-      </div>
-    </div>
-    <!-- Your stack -->
-    <div class="col-lg-6">
-      <h3>Your Stack</h3>
-      <div class="col-lg-12">
-        <ul class="list-group" *ngFor="let result of mystack">
-          <li class="list-group-item"><span class="{{result.icon}}" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{result.name}}<button type="button" class="close">&times;</button></li>
-        </ul>
-      </div>
-    </div>
+
+<div class="container margin">
+  <button class="btn btn-primary pull-right margin" data-toggle="modal" data-target="#compare">Check Compare Set</button>
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let result of results">
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="{{result.img}}"/>
+          </div>
+          <h1>{{result.name}}</h1>
+          <p>{{result.description}}</p>
+          <button type="button" class="btn btn-primary pull-right">Compare</button>
+          <button type="button" class="btn btn-primary pull-right">Add Consideration Set</button>
+        </div>
+      </li>
+    </ul>
   </div>
+</div>
+
+
+<!-- modal -->
+<div class="modal fade" id="compare" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Compare Set</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th> </th>
+                <th>Pardot</th>
+                <th>Contact Pigeon</th>
+                <th>Act-On</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Review</td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>100/Month</td>
+                <td>100/Month</td>
+                <td>100/Month</td>
+              </tr>
+              <tr>
+                <td>Free Trial</td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+              </tr>
+              <tr>
+                <td>Customer Service</td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+              </tr>
+              <tr>
+                <td>Integration</td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
