@@ -1,7 +1,10 @@
 <div class="margin text-center">
   <h1>Match Results</h1>
 </div>
-
+<div class="margin text-center pull-right customer" data-toggle="modal" data-target="#chat">
+  <img src="./assets/img/customerservice.png">
+  <h5>Question?</h5>
+</div>
 <div class="container margin">
   <button class="btn btn-primary pull-right margin" data-toggle="modal" data-target="#compare">Check Compare Set</button>
   <div class="col-lg-12">
@@ -11,7 +14,7 @@
           <div class="col-lg-4">
             <img src="{{result.img}}"/>
           </div>
-          <h1>{{result.name}}</h1>
+          <h1><a href="{{result.link}}">{{result.name}}</a></h1>
           <p>{{result.description}}</p>
           <button type="button" class="btn btn-primary pull-right">Compare</button>
           <button type="button" class="btn btn-primary pull-right">Add Consideration Set</button>
@@ -22,7 +25,7 @@
 </div>
 
 
-<!-- modal -->
+<!-- Compare Modal -->
 <div class="modal fade" id="compare" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -76,4 +79,47 @@
         </div>
       </div>
     </div>
+</div>
+
+
+<!-- Chat modal -->
+<div class="modal fade" id="chat" role="dialog">
+
+<div class="container">
+    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;">
+        <div class="col-xs-12 col-md-12">
+        	<div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Customer Service</h3>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base">
+                  <div class="row msg_container base_receive">
+                          <div class="col-md-2 col-xs-2 avatar">
+                              <img src="./assets/img/customerservice.png" class=" img-responsive ">
+                          </div>
+                          <div class="col-md-10 col-xs-10">
+                              <div class="messages msg_receive">
+                                  <p>How can I help you?</p>
+                                  <time datetime="2009-11-13T20:00">now</time>
+                              </div>
+                          </div>
+                  </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                        </span>
+                    </div>
+                </div>
+    		    </div>
+        </div>
+    </div>
+  </div>
 </div>
