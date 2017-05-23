@@ -12,6 +12,8 @@ import { MatchPage } from '../Pages/MatchPage/matchpage';
 import { AppRoutingModule } from './router';
 import { AF } from '../Pages/Providers/firebase';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { FileUploadModule } from 'ng2-file-upload';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyD1HTPubvjv39Z4QyyvqhyyY-9Jjik5RfA",
   authDomain: "imcmartech.firebaseapp.com",
@@ -40,7 +42,8 @@ const myFirebaseAuthConfig = {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
+    FileUploadModule
   ],
   providers: [
     AF,

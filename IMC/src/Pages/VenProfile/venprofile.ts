@@ -1,6 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { AF } from '../Providers/firebase';
 import { FormsModule, NgForm } from '@angular/forms';
+import { FileSelectDirective, FileUploader } from 'ng2-file-upload';
+const URL = 'http://evening-anchorage-3159.herokuapp.com/api/';
 
 @Component({
   selector: 'venprofile',
@@ -61,6 +63,7 @@ export class VenProfile {
    'tooltip' : '6'
   }
   ];
+  public uploader:FileUploader = new FileUploader({url:URL});
 
   NumProduct = 1;
   constructor(public af:AF ){

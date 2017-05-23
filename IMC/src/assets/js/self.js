@@ -5,6 +5,9 @@ $(function(){
   $('#vensignin').click(function(){
     $('#vendormodal').modal('hide');
   });
+  $('#filebutton').click(function(){
+    $('#file').click();
+  })
 });
 
 $(document).ready(function () {

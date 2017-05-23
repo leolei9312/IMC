@@ -156,3 +156,6 @@ padding: 4px;
 .funkyradio-default:hover .tooltiptext {
     visibility: visible;
 }
+#file{
+  visibility: hidden;
+}

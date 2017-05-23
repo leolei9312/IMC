@@ -78,7 +78,11 @@
             </div>
           </div>
         </div>
-        <button *ngIf="product.id == NumProduct" type="submit" class="btn btn-primary btn-info-full rightside">Submit Products</button>
+        <div class="row">
+          <button *ngIf="product.id == NumProduct" type="submit" class="btn btn-primary pull-right margin">Submit Products</button>
+          <button type="button" id="filebutton" class="btn btn-primary pull-right margin">Upload Pitches</button>
+          <input type="file" id="file" name="file" ng2FileSelect [uploader]="uploader"/>
+        </div>
       </form>
     </div>
   </div>
