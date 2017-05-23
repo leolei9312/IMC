@@ -3,7 +3,7 @@
   margin-bottom: 5%;
 }
 .panel-heading{
-  background-color: #ef5615;
+  background-color: #9336fc;
   color: white;
 }
 .text-margin{
@@ -66,24 +66,24 @@
 }*/
 
 .funkyradio input[type="checkbox"]:checked ~ label {
-  color: #ef5615;
+  color:#9336fc;
 }
 
 
 .funkyradio input[type="checkbox"]:checked ~ label:before {
   content: '\2714';
   text-indent: .9em;
-  color: #ef5615;
-  background-color: #ef5615;
+  color: #9336fc;
+  background-color: #9336fc;
 }
 
 .funkyradio input[type="checkbox"]:focus ~ label:before {
-  box-shadow: 0 0 0 3px #ef5615;
+  box-shadow: 0 0 0 3px #9336fc;
 }
 
 
 .funkyradio-default input[type="checkbox"]:checked ~ label:before {
-  color: #ef5615;
+  color: #9336fc;
   background-color: #ccc;
 }
 

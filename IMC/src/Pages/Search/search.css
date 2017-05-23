@@ -10,7 +10,7 @@
 }
 
 .row h2{
-  color: #ef5615;
+  color: black;
 }
 
 .back {
@@ -39,7 +39,7 @@
 }
 .b02_slide_in {
     overflow: hidden;
-    border: #ef5615 solid 1px;
+    border: #9336fc solid 1px;
 }
 
 .b02_slide_in div {
@@ -59,7 +59,7 @@
 }
 
 .b02_slide_in div:nth-child(2) {
-    background-color: #ef5615;
+    background-color: #9336fc;
     transition: top 0.1s ease;
     -webkit-transition: top 0.1s ease;
     -moz-transition: top 0.1s ease;
