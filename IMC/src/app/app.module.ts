@@ -9,10 +9,13 @@ import { VenProfile } from '../Pages/VenProfile/venprofile';
 import { SearchPage } from '../Pages/Search/search';
 import { ConsiderationSet } from '../Pages/ConsiderationSet/set';
 import { MatchPage } from '../Pages/MatchPage/matchpage';
+import { Product } from '../Pages/Product/product';
 import { AppRoutingModule } from './router';
 import { AF } from '../Pages/Providers/firebase';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { FileUploadModule } from 'ng2-file-upload';
+import {RatingModule} from "ngx-rating";
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD1HTPubvjv39Z4QyyvqhyyY-9Jjik5RfA",
@@ -35,7 +38,8 @@ const myFirebaseAuthConfig = {
     SearchPage,
     ConsiderationSet,
     VenProfile,
-    MatchPage
+    MatchPage,
+    Product
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ const myFirebaseAuthConfig = {
     HttpModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
-    FileUploadModule
+    FileUploadModule,
+    RatingModule
   ],
   providers: [
     AF,

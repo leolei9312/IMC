@@ -6,6 +6,8 @@ import { SearchPage } from '../Pages/Search/search';
 import { MatchPage } from '../Pages/MatchPage/matchpage';
 import { Home } from '../Pages/Home/home';
 import { ConsiderationSet } from '../Pages/ConsiderationSet/set';
+import { Product } from '../Pages/Product/product';
+
 const routes: Routes = [
   {path: 'home',component: Home},
   {path: 'marprofile', component: MarProfile},
@@ -13,6 +15,7 @@ const routes: Routes = [
   {path : 'considerationset', component : ConsiderationSet},
   {path : 'venprofile', component : VenProfile},
   {path : 'matchpage', component : MatchPage},
+  {path : 'product', component : Product},
   {
     path: '',
     redirectTo: 'home',

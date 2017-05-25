@@ -1,0 +1,12 @@
+.margin{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+img{
+  height: 7%;
+  width: 7%;
+}
+.panel-heading{
+  background-color: #9336fc;
+  color: white;
+}
