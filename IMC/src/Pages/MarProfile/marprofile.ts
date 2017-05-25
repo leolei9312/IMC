@@ -8,27 +8,6 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrls: ['./marprofile.css']
 })
 export class MarProfile {
-  test : string;
-  stage2 = [
-    {"name" : '1', "value" : 'Audience Segmentation', 'ischecked' : false,
-     'tooltip' : '1. Task Workflows Design. 2. Customer Targeting. 3. Multi-channel Campaign Planning. 4. Publish Scheduling '
-    },
-    {"name" : '2', "value" : 'Customer Journey Mapping', 'ischecked' : false,
-     'tooltip' : '1. Multi-channel Communications. 2. Content Management. 3. Influencer Marketing. 4. SEO Management. 5. Social Media Marketing. 6. Mobile Marketing. 7. Email Marketing.'
-    },
-    {"name" : '3', "value" : 'Lead Generation', 'ischecked' : false,
-     'tooltip' : '1. Campaign Process Tracking/ Monitoring. 2. Budget Tracking.'
-    },
-    {"name" : '4', "value" : 'Content Development', 'ischecked' : false,
-     'tooltip' : '1. Benchmarking. 2. Data Exchange (Customer/ Campaign Data). 3. Conversion Tracking.'
-    },
-    {"name" : '5', "value" : 'Email Automation', 'ischecked' : false,
-     'tooltip' : '1. Website/ Email Personalization. 2. Lead Scoring. 3. Campaign Testing. 4. Event Triggering.'
-    },
-    {"name" : '6', "value" : 'Multi-channel Campaign Management', 'ischecked' : false,
-     'tooltip' : '6'
-    }
-  ];
   stage1 = [
     {
       "img" : "assets/img/edit.png",
@@ -41,7 +20,7 @@ export class MarProfile {
     {
       "img" : "assets/img/execution.png",
       "title" : "Execution",
-      "Description" : "Having the marketing campaign start getting executed. IMPLEMENTATION",
+      "Description" : "Having the marketing campaign start getting executed.",
       "ischecked" : false,
       "value" : "Execution",
       "id" : 1
@@ -72,31 +51,134 @@ export class MarProfile {
     }
   ];
 
-
+  sub = [
+    [
+      {
+        "name" : "Task Workflows Design",
+        "des" : "Sets up custom campaign workflows, delegates tasks, tracks work progress in real-time, and creates progress and performance reports"
+      },
+      {
+        "name" : "Customer Targeting",
+        "des" : "Helps marketing professionals define customer or prospect lists in commercial campaigns to improve redemption performance."
+      },
+      {
+        "name" : "Multi-Channel Campaign Planning",
+        "des" : "Helps marketing professionals personalize and deliver campaigns across all the online and offline channels."
+      },
+      {
+        "name" : "Publish Scheduling",
+        "des" : "Creates a custom posting schedule for the content across all the channels."
+      }
+    ],
+    [
+      {
+        "name" : "Multi-Channel Communication",
+        "des" : "Communicates offers to target customers across all the channels, including websites, mobile, social, direct mail, call centers and email."
+      },
+      {
+        "name" : "Content Management",
+        "des" : "A set of processes and technologies that supports the collection, managing, and publishing of information in any form or medium."
+      },
+      {
+        "name" : "Influencer Marketing",
+        "des" : "Targets on specific key individuals who have influence over potential customers."
+      },
+      {
+        "name" : "SEO Management",
+        "des" : "A process of getting traffic from the search results on search engines, including free, organic, natural, or editorial search results."
+      },
+      {
+        "name" : "Social Media",
+        "des" : "Helps marketing professionals manage the measurable objectvies, track the progress, and evaluate the performance on all the social media platforms."
+      },
+      {
+        "name" : "Mobile",
+        "des" : "Helps marketing professionals manage the mobile marketing campaign, including the content, the schedule, the progress, and the performance."
+      },
+      {
+        "name" : "Email",
+        "des" : "Helps marketing professionals track the email marketing campaign, and generate reports."
+      }
+    ],
+    [
+      {
+        "name" : "Campaign Process Tracking/Monitoring",
+        "des" : "Assists marketers to track each stage of campaigns that's under going, including how it's executed, perfomed, as well as it's current outcomes; Marketers will be able to adjust their campaign processes accordingly."
+      },
+      {
+        "name" : "Budget Tracking",
+        "des" : "Records expenses during campaign processes, and compare those with budget in real time."
+      }
+    ],
+    [
+      {
+        "name" : "Benchmarking",
+        "des" : "Helps set benchmarks for various metrics based on historical data or industry averages."
+      },
+      {
+        "name" : "Data Exchange(Customer/Campaign Data)",
+        "des" : "Integrates marketing technologies together, and makes it easier to transfer data among different platforms."
+      },
+      {
+        "name" : "Conversion Tracking",
+        "des" : "Helps marketers track each channel's conversion rate, which contributes to an easier attribution process."
+      }
+    ],
+    [
+      {
+        "name" : "Website/Email Personalization",
+        "des" : "Helps marketers to generate customized website or emails that displays specific content for particular target segments."
+      },
+      {
+        "name" : "Lead Scoring",
+        "des" : "Helps marketers to score data points based on their potential conversion rate of a marketing campaign, and identify the ones with highest scores for further engagement with them."
+      },
+      {
+        "name" : "Campaign Testing",
+        "des" : "Automatically test campaign results for marketers; the campaigns being tested can include owned websites, products and marketing collateral."
+      },
+      {
+        "name" : "Event Triggering",
+        "des" : ""
+      },
+      {
+        "name" : "Lead Nurturing",
+        "des" : ""
+      },
+      {
+        "name" : "A/B Testing",
+        "des" : ""
+      },
+    ]
+  ];
+  stage2 = [];
   constructor(public af:AF ){
 
   }
 
   ClickStage1(id){
     this.stage1[id].ischecked = true;
+    for(var i = 0; i < this.sub[id].length; i ++){
+      this.stage2.push(this.sub[id][i]);
+    }
   }
 
   SubmitMarketerProfile(form : NgForm){
     //for stage1
-    let tempstage1 = [];
-    for(var i = 0; i < this.stage1.length; i ++){
-      if(this.stage1[i].ischecked) tempstage1.push(this.stage1[i]);
-    }
-    let tempstage2 = [];
-    for(var i = 0; i < this.stage2.length; i ++){
-      if(this.stage2[i].ischecked) tempstage2.push(this.stage2[i]);
-    }
-    let profile = {
-      Stage1 : tempstage1,
-      Stage2 : tempstage2,
-      Stage3 : form.controls['budget'].value,
-      Stage4 : form.controls['requirement'].value
-    };
-    this.af.SubmitMarketerProfile(profile);
+    // let tempstage1 = [];
+    // for(var i = 0; i < this.stage1.length; i ++){
+    //   if(this.stage1[i].ischecked) tempstage1.push(this.stage1[i]);
+    // }
+    // let tempstage2 = [];
+    // for(var i = 0; i < this.stage2.length; i ++){
+    //   if(this.stage2[i].ischecked) tempstage2.push(this.stage2[i]);
+    // }
+    // let profile = {
+    //   Stage1 : tempstage1,
+    //   Stage2 : tempstage2,
+    //   Stage3 : form.controls['budget'].value,
+    //   Stage4 : form.controls['requirement'].value
+    // };
+    this.af.SubmitMarketerProfile(form);
   }
 }

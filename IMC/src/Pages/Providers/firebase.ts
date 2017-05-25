@@ -96,12 +96,13 @@ export class AF {
   }
 
   SubmitMarketerProfile(profile : any){
-    this.marketers = this.af.database.object('marketers/' + this.uid);
-    this.marketers.update(profile).then(success=>{
-      this.router.navigate(['considerationset']);
-    }, error=>{
-      console.log(error);
-    });
+    // this.marketers = this.af.database.object('marketers/' + this.uid);
+    // this.marketers.update(profile).then(success=>{
+    //   this.router.navigate(['considerationset']);
+    // }, error=>{
+    //   console.log(error);
+    // });
+    this.router.navigate(['considerationset']);
   }
 
   AddTech(newTech){
@@ -118,6 +119,6 @@ export class AF {
     this.marketers.update(temp);
   }
 
-  
+
 
 }

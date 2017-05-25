@@ -13,7 +13,9 @@
     .wizard > div.wizard-inner {
         position: relative;
     }
-
+#step1{
+  text-overflow:inherit;
+}
 .connecting-line {
     height: 2px;
     background: #e0e0e0;

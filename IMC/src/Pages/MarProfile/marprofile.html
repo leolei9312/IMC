@@ -62,14 +62,14 @@
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
-                        <h3>Concerns About Planning <h4>(Please select one or more concerns you have when planning your marketing campaign)</h4></h3>
+                        <h3>Concerns Your Stage <h4>(Please select one or more concerns you have in your marketing campaign)</h4></h3>
                         <div id="stage2-parent" class="row form-group product-chooser text-center">
                           <div id="stage2" class="col-lg-12 text-center">
                             <div class="funkyradio">
                                 <div class="funkyradio-default" *ngFor="let stage of stage2">
-                                    <input type="checkbox" name="checkbox" (change)="stage.ischecked=$event.target.checked ? true : false" [ngModel]="stage.ischecked" id="{{stage.name}}"/>
-                                    <label for="{{stage.name}}">{{stage.value}}</label>
-																		<span class="tooltiptext">{{stage.tooltip}}</span>
+                                    <input type="checkbox" name="checkbox" id="{{stage.name}}"/>
+                                    <label for="{{stage.name}}">{{stage.name}}</label>
+																		<span class="tooltiptext">{{stage.des}}</span>
                                 </div>
                             </div>
                           </div>
