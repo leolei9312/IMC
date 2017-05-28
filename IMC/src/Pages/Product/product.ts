@@ -8,5 +8,7 @@ import { StarRatingModule } from 'angular-star-rating';
 })
 
 export class Product{
-  rate : number = 4.5;
+  features : number = 4.5;
+  service : number = 4;
+  integration : number = 3.5
 }
