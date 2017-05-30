@@ -102,7 +102,7 @@ export class AF {
     // }, error=>{
     //   console.log(error);
     // });
-    this.router.navigate(['considerationset']);
+    this.router.navigate(['matchpage']);
   }
 
   AddTech(newTech){

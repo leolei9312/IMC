@@ -24,7 +24,7 @@ export class MatchPage {
       "img" : './assets/img/salesforce.png',
       'name' : 'Pardot',
       'description' : 'Pardot is an on-demand software solution that provides a simple marketing automation platform to grow pipeline and generate better leads by allowing marketing and sales departments to create, deploy, automate, and manage marketing campaigns online.',
-      'link' : 'http://www.salesforce.com'
+      'link' : 'product'
     },
     {
       "img" : './assets/img/ibm.jpg',
